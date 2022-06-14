@@ -1,0 +1,5 @@
+vendor/
+files/
+composer.phar
+config.php
+data/

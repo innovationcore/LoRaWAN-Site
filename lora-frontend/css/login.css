@@ -1,0 +1,49 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #1a48aa;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .checkbox {
+    font-weight: 400;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.logo {
+    color: white;
+    background-image: url("/img/UKHCLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(26, 72, 170, 0.65);
+    background-blend-mode: lighten;
+    min-height: 4.35rem;
+    text-align: center;
+    text-shadow: 1px 1px #07132c;
+}
+
+.logo a, .logo a:active, .logo a:visited {
+    color: white;
+    text-decoration: none;
+}

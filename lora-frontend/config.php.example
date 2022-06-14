@@ -1,0 +1,33 @@
+<?php
+    return [
+        'db' => [
+            'host'      => '',
+            'name'      => '',
+            'user'      => '',
+            'pass'      => '',
+        ],
+        'ldap' => [
+            'enabled'   => false,
+            'host'      => '',
+            'prefix'    => '',
+            'suffix'    => '',
+        ],
+        'users' => [
+            'auto-create'   => true,
+            'permitted'     => array(
+                /* Insert one or more user's linkblue . e.g.
+                    'abc123',
+                    'def456',
+                */
+            )
+        ],
+        'admins' => array(
+            /* Insert one or more user's linkblue prior to their first time logging in. e.g.
+                'abc123',
+                'def456',
+            */
+        ),
+         'sessions' => [
+             'timeout'   => 7200,
+         ]
+    ];

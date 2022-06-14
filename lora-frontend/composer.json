@@ -1,0 +1,23 @@
+{
+  "name": "vendor_name/orders",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "cdhick2",
+      "email": "email@example.com"
+    },
+    {
+      "name": "sear234",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "altorouter/altorouter": "2.0.1",
+    "ext-ldap": "*",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "setasign/fpdf": "^1.8"
+  }
+}

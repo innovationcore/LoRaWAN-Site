@@ -1,0 +1,39 @@
+version: "3.2"
+services:
+  php:
+    build: './php/'
+    networks:
+      - lora-backend
+    volumes:
+      - ../lora-frontend/:/var/www/html/
+  apache:
+    build: './apache/'
+    depends_on:
+      - php
+      - mssql
+    networks:
+      - lora-frontend
+      - lora-backend
+    ports:
+      - "8080:80"
+    volumes:
+      - ../lora-frontend/:/var/www/html/
+  mssql:
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      - lora-backend
+    environment:
+      MSSQL_PID: "Standard"
+      SA_PASSWORD: "Codeman01"
+      ACCEPT_EULA: "Y"
+      TZ: "America/New_York"
+    ports:
+      - "1433:1433"
+    volumes:
+      - lora-data:/var/opt/mssql
+
+networks:
+  lora-frontend:
+  lora-backend:
+volumes:
+  lora-data:
