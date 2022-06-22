@@ -289,10 +289,12 @@ class DeviceController {
 
     public static function handleUplink(){
         header('Content-Type: application/json');
-        $json = file_get_contents('php://input');
+        $body = file_get_contents('php://input'); // this gets the entire body of the POST request
+        var_dump($body);
+        
 
         // Converts it into a PHP object
-        $data = json_decode($json);
+        // $data = json_decode($json);
         // {
         //     'applicationID':'1',
         //     'applicationName':'Test-App',
@@ -325,13 +327,17 @@ class DeviceController {
         //     'data':'i9YBAAADAAANAA==',
         //     'time':'2022-06-13T20:50:41.251515Z'
         // }
-        try {
-            DB::run("INSERT INTO uplink_packets (application_id, application_name, dev_eui, rx_info, tx_info, fCnt, fPort, data, time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [$_POST['applicationID'], $_POST['applicationName'], $_POST['devEUI'], $_POST['rxInfo'][0], $_POST['txInfo'][0], $_POST['fCnt'], $_POST['fPort'], $_POST['data'], $_POST['time']]);
-        } catch (Exception $e) {
-            //probably should report this to an error table/logs
-            echo json_encode(array('message' => $e));
-        }
-        echo json_encode(array('message' => $data));
+
+
+
+        // try {
+        //     DB::run("INSERT INTO uplink_packets (application_id, application_name, dev_eui, rx_info, tx_info, fCnt, fPort, data, time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [$_POST['applicationID'], $_POST['applicationName'], $_POST['devEUI'], $_POST['rxInfo'][0], $_POST['txInfo'][0], $_POST['fCnt'], $_POST['fPort'], $_POST['data'], $_POST['time']]);
+        // } catch (Exception $e) {
+        //     //probably should report this to an error table/logs
+        //     echo json_encode(array('message' => $e));
+        // }
+        // echo json_encode(array('message' => $data));
+        return $requestMethod;
 
     }
 
